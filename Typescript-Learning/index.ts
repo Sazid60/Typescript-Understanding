@@ -206,3 +206,35 @@ const printUserInfo = (user: User) => {
 const result1 = printUserInfo({ name: "Alex", age: 20, location: "USA" });
 console.log(result1); 
 
+
+// Optional properties
+type User1 = {
+  name: string;
+  age?: number;
+  location: string;
+};
+
+const user: User1 = {
+  name: "HuXn",
+  age: 20,
+  location: "Arabic",
+};
+
+console.log(`Name: ${user.name}, Age: ${user.age}, Location: ${user.location}`);
+
+
+// Read Only Property
+type Person2 = {
+  name: string;
+  age: number;
+  readonly email: string;
+};
+
+const user7: Person2 = {
+  name: "John",
+  age: 20,
+  email: "test@gmail.com",
+};
+
+console.log(user7.email); // Valid
+// user.email = "john@gmail.com" // 🚫 Not Valid
