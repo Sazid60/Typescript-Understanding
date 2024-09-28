@@ -289,3 +289,28 @@ console.log(user8);
 
 const items2: (number | string)[] = [1, 3, "hello"];
 console.log(items);
+
+// Literal Types
+// ----------------------------
+let color1: "red" | "blue" | "green";
+color1 = "green";
+console.log(color1);
+// ----------------------------
+
+// ----------------------------
+let isTrue: true | false;
+isTrue = true;
+console.log(isTrue);
+// ----------------------------
+
+// ----------------------------
+let number = 1 | 2 | 3;
+number = 1;
+console.log(number);
+// ----------------------------
+
+// ----------------------------
+let password1: "secretpassword" = "secretpassword";
+// password1 = "tryinganotherpassword"; // Warning ⚠️
+console.log(password1);
+// ----------------------------
