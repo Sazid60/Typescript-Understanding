@@ -155,3 +155,39 @@ const triple: number[][][] = [[[1, 2, 3, 4, 5]]];
 console.log(singleDi);
 console.log(multiDi);
 console.log(triple);
+
+// Object in Typescript
+
+// type variableName (annotations/types) = {property:value}
+
+// -------------------------
+// Define a person object
+const person2: { firstName: string; lastName: string; age: number } = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+
+// Access and log properties
+console.log(`Name: ${person2.firstName} ${person2.lastName}, Age: ${person2.age}`);
+// -------------------------
+
+// -------------------------
+// Using objects as function return value
+function printUser(): { name: string; age: number; location: string } {
+  return {
+    name: "Alex",
+    age: 19,
+    location: "USA",
+  };
+}
+
+const res4 = printUser();
+console.log(res4);
+
+function printUserName(person: { firstName: string; lastName: string }) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+
+printUserName({ firstName: "HuXn", lastName: "WebDev" });
+// -------------------------
