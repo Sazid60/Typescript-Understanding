@@ -264,3 +264,28 @@ const huxn: User5 = {
 console.log(
   `Name: (${huxn.first} ${huxn.last}) Age: (${huxn.age}) Email: (${huxn.email}) Password: (${huxn.password})`
 );
+
+// Union Types
+let password: string | number = 20;
+
+type UserInfo1 = {
+  first: string;
+  last: string;
+  age: number;
+};
+
+type AccountDetails1 = {
+  email: string;
+  password: string;
+};
+
+let user8: UserInfo1 | AccountDetails1 = {
+  first: "HuXn",
+  last: "WebDev",
+  age: 29,
+};
+
+console.log(user8);
+
+const items2: (number | string)[] = [1, 3, "hello"];
+console.log(items);
