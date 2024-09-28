@@ -63,3 +63,11 @@ function addOne(num: number) {
   // Also notice, TypeScript will gives you warning if you provide more or less arguments then you specifiy in your parameters area.
   
   // double(2, 10, 20); // 👈 Warning
+
+//   Default Parameter
+function greet(person: string = "Anonymous") {
+    return `Hello ${person}`;
+  }
+  
+  const res1 = greet();
+  console.log(res1);
