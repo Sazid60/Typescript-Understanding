@@ -85,3 +85,12 @@ function double1(x: number): number {
   const double2 = (x: number): number => x * x;
   const res3 = double2(2);
   console.log(res3);
+
+//   Void Types 
+function printMessage(message: string): void {
+    console.log(`This is my message: ${message}`);
+    // ERROR 👇
+    // return message;
+  }
+  
+  printMessage("Hello How Are You?");
