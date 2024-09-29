@@ -487,3 +487,63 @@ const movie3: MovieGenra = {
 
 const res5 = movie3.printMovieInfo("John Wick", 100, 8);
 console.log(res5);
+
+
+// Generics
+// In Typescript generics allow you to create reuseable components that work with a variety of types. Generics make it possible for you to define functions classes and interfaces that can work with different data types without having to duplicate code. 
+
+// firsst generics 
+// ------------- Without Generics -------------
+// function printNumber(item: number, defaultValue: number): [number, number] {
+//   return [item, defaultValue];
+// }
+
+// function printString(item: string, defaultValue: string): [string, string] {
+//   return [item, defaultValue];
+// }
+
+// function printBoolean(
+//   item: boolean,
+//   defaultValue: boolean
+// ): [boolean, boolean] {
+//   return [item, defaultValue];
+// }
+
+// // Example usage
+// const num = printNumber(42, 0);
+// console.log(num); // Outputs: [42, 0]
+
+// const str = printString("hello", "world");
+// console.log(str); // Outputs: ['hello', 'world']
+
+// const bool = printBoolean(true, false);
+// console.log(bool); // Outputs: [true, false]
+// -----------------------------------
+
+// --------------- Using Generics ---------------
+function uniqueDataTypeFunc<Type>(
+  item: Type,
+  defaultValue: Type
+): [Type, Type] {
+  return [item, defaultValue];
+}
+
+// Example usage
+const num = uniqueDataTypeFunc<number>(42, 0);
+console.log(num); // Outputs: [42, 0]
+
+const str1 = uniqueDataTypeFunc<string>("hello", "world");
+console.log(str1 ); // Outputs: ['hello', 'world']
+
+// Example usage with a custom type
+interface Dog {
+  name: string;
+  breed: string;
+}
+
+const dogPair = uniqueDataTypeFunc<Dog>(
+  { name: "Buddy", breed: "Labrador" },
+  { name: "Default", breed: "Unknown" }
+);
+
+console.log(dogPair); // Outputs: [{ name: 'Buddy', breed: 'Labrador' }, { name: 'Default', breed: 'Unknown' }] 
