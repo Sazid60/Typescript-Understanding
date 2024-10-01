@@ -658,3 +658,26 @@ console.log(combinedStringAndNumber); // Outputs: ["Hello", 42]
 const combinedBooleanAndArray = combineValues(true, [1, 2, 3]);
 console.log(combinedBooleanAndArray); // Outputs: [true, [1, 2, 3]]
 // --------------------------
+
+// Type Narrowing
+// Type Narrowing is the process of refining a variables type with a coonditional block of computerExample. Thi allows you to wrrite more precise and type safe code 
+
+// Tye Guard : Type guards are mechanism that helps typescript understand and narrow dow the types more precisely. typeof Operator is one of the common type guard
+// Define a union type
+type MyType = string | number;
+
+// Example function with type guard
+function exampleFunction(value: MyType): void {
+  // Type guard using typeof
+  if (typeof value === "string") {
+    // Within this block, TypeScript knows that 'value' is a string
+    console.log(value.toUpperCase());
+  } else {
+    // Within this block, TypeScript knows that 'value' is a number
+    console.log(value.toFixed(2));
+  }
+}
+
+// Example usage
+exampleFunction("hello"); // Outputs: HELLO
+exampleFunction(42); // Outputs: 42.00
